@@ -1,0 +1,15 @@
+<h1>To Do</h1>
+<hr/>
+<div>
+	<input type="text" id="txtTodo" [(ngModel)]="newTodoText" />
+	<button type="button" id="btnCreateTodo" (click)="addTodo()">Add</button>
+</div>
+<div>
+	<ul id="todoList">
+		<li *ngFor="let todo of todoStore.todos">
+			{{todo.title}}
+			<input type='checkbox' class="complete" (click)="toggleCompletion(todo)" [checked]="todo.completed" />
+			<button type="button" class="delete" (click)="remove(todo)">Delete</button>
+		</li>
+	</ul>
+</div>
